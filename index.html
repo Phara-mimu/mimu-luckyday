@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>咪姆猫 · 幸运生活</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background: linear-gradient(145deg, #fffafc, #ffe6f0);
+      color: #444;
+      text-align: center;
+      padding: 0 5vw;
+    }
+    .music-bar {
+      position: fixed;
+      top: 2vh;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(255, 255, 255, 0.4);
+      backdrop-filter: blur(8px);
+      border-radius: 40px;
+      padding: 0.6em 1.2em;
+      display: flex;
+      align-items: center;
+      gap: 1em;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      z-index: 1000;
+      font-size: 5vw;
+      max-width: 300px;
+    }
+    .music-bar { cursor: pointer; justify-content: center; } /* 移除按钮样式 */
+.music-bar button { display: none;
+      background: white;
+      border: none;
+      border-radius: 50%;
+      width: 36px;
+      height: 36px;
+      font-size: 1em;
+      cursor: pointer;
+    }
+    .container {
+      margin-top: 24vh;
+    }
+    .mimu-img {
+      width: 140px;
+      margin-top: 3vh;
+      animation: float 3s ease-in-out infinite;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    .section {
+      margin: 2em 0;
+      font-size: 5vw;
+      white-space: pre-wrap;
+    }
+  </style>
+</head>
+<body>
+  <div class="music-bar" onclick="toggleBGM()">🎧🐱</div>
+    <audio id="bgm" loop>
+      <source src="cat_song.mp3" type="audio/mpeg">
+    </audio>
+  </div>
+
+  <img src="mimu-cat.png" alt="咪姆猫" class="mimu-img" />
+
+  <div class="container">
+    <div id="today" class="section"></div>
+    <div id="quote" class="section"></div>
+    <div id="food" class="section"></div>
+    <div id="action" class="section"></div>
+  </div>
+
+  <script src="daily.js"></script>
+</body>
+</html>
